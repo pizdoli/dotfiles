@@ -1,0 +1,25 @@
+things I have done to get the t410 up and running
+
+edit /etc/rc.conf
+	wifi stuff:
+		wlans_iwn0="wlan0"
+		ifconfig_wlan0="WPA SYNCDHCP"
+
+	console resolution
+		kld_list="i915kms" //what about what i did in /boot/loader.conf?
+
+	dbus b/c xfce (or more?)
+		dbus_enable="YES"
+	
+	to get trackpoint working right
+		moused_enable="YES"
+		moused_flags="-VH" // need to tweek
+
+edit /boot/loader.conf
+	enable vt for X/console transition smoothness
+		kern.vty=vt
+
+	enable sound device (assuming intel built-in, else see handbook)
+		snd_hda_load="YES"
+			and what else to make sound sane?
+
